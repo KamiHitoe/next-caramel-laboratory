@@ -1,71 +1,25 @@
-import React from 'react';
-import {
-  RecoilRoot,
-  atom,
-  selector,
-  useRecoilState,
-  useRecoilValue,
-} from 'recoil';
+import Button from '@mui/material/Button';
+import styles from '../styles/Styles.module.scss';
+import { StyledBtn } from '../styles/components.tsx'
 
-// main React component
+// const StyledBtn = styled.button`
+//   background: transparent;
+//   border-radius: 3px;
+//   border: 2px solid palevioletred;
+//   color: palevioletred;
+//   margin: 0 1em;
+//   padding: 0.25em 1em;
+// `
+
 function App() {
   return (
-    <RecoilRoot>
-      <CharacterCounter />
-    </RecoilRoot>
-  );
-}
+    <>
+      <h1 className={styles.title}>test</h1>
+      <p>this is a test page</p>
+      <Button className={styles.btn} variant="contained">M Button</Button>
+      <StyledBtn>Btn</StyledBtn>
+    </>
+  )
+};
 
-// function component
-function CharacterCounter() {
-  return (
-    <div>
-      <h1>Test Recoil</h1>
-      <TextInput />
-      <CharacterCount />
-    </div>
-  );
-}
-
-// stateの定義, store的な？
-const textState = atom({
-  key: 'textState', // unique ID (with respect to other atoms/selectors)
-  default: '', // default value (aka initial value)
-});
-
-// stateの定義
-function TextInput() {
-  const [text, setText] = useRecoilState(textState);
-
-  // define event handler
-  const onChange = (event) => {
-    setText(event.target.value); // input value
-  };
-
-  return (
-    <div>
-      <input type="text" value={text} onChange={onChange} />
-      <br />
-      Echo: {text}
-    </div>
-  );
-}
-
-const charCountState = selector({
-  key: 'charCountState', // unique ID (with respect to other atoms/selectors)
-  get: ({get}) => {
-    const text = get(textState);
-
-    return text.length;
-  },
-});
-
-function CharacterCount() {
-  const count = useRecoilValue(charCountState);
-
-  return <>Character Count: {count}</>;
-}
-
-export default App
-
-
+export default App;

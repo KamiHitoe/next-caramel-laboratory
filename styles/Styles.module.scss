@@ -1,0 +1,15 @@
+
+$pink: #e91e63;
+$amber: #ffc107;
+
+.title {
+  color: $pink;
+  &:hover {
+    color: $amber;
+  }
+}
+.btn {
+  color: #fff;
+  background-color: $pink;
+}
+
