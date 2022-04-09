@@ -1,5 +1,30 @@
 
 {
-  "extends": ["next", "next/core-web-vitals", "prettier"]
+  "extends": ["next", "next/core-web-vitals", "prettier"],
+  "rules": {
+    "quotes": ["error", "double"],
+    "semi": ["error", "always"],
+    "prefer-const": ["error", {
+      "destructuring": "any",
+      "ignoreReadBeforeAssign": false
+    }],
+    "arrow-spacing": ["error", {
+      "before": true,
+      "after": true
+    }],
+    "comma-spacing": ["error", {
+      "before": false,
+      "after": true
+    }],
+    "max-len": ["error", {
+      "code": 60,
+      "ignoreComments": true,
+      "ignoreUrls": true
+    }],
+    "object-curly-spacing": ["error", "always"],
+    "object-curly-newline": ["error", {
+      "multiline": true
+    }]
+  }
 }
 
