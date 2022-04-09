@@ -4,13 +4,13 @@ import {
   selector,
   useRecoilState,
   useRecoilValue,
-} from 'recoil';
+} from "recoil";
 
 // define state
 const textBox = atom({
-  key: 'textBox',
-  default: '',
-})
+  key: "textBox",
+  default: "",
+});
 
 function Text() {
   // define hook
@@ -19,7 +19,7 @@ function Text() {
   // define event handler
   const onTextChange = (event) => {
     setText(event.target.value);
-  }
+  };
 
   return (
     <>
@@ -27,7 +27,7 @@ function Text() {
       <br />
       Result: {text}
     </>
-  )
+  );
 }
 
 export default Text;
