@@ -1,5 +1,5 @@
 import Button from '@mui/material/Button';
-import styles from '../styles/Styles.module.scss';
+import styles from '../styles/Test.module.scss';
 import { StyledBtn } from '../styles/components.tsx'
 
 // const StyledBtn = styled.button`
@@ -11,7 +11,7 @@ import { StyledBtn } from '../styles/components.tsx'
 //   padding: 0.25em 1em;
 // `
 
-function App() {
+const Test = () => {
   return (
     <>
       <h1 className={styles.title}>test</h1>
@@ -22,4 +22,4 @@ function App() {
   )
 };
 
-export default App;
+export default Test;
