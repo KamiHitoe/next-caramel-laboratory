@@ -1,16 +1,12 @@
-import Button from "@mui/material/Button";
-import styles from "../styles/Test.module.scss";
-import { StyledBtn } from "../styles/components.tsx";
 
 const Test = () => {
-  return (
-    <div>
-      <h1 className={styles.title}>test</h1>
-      <p>this is a test page</p>
-      <Button className={styles.btn} variant="contained">M Button</Button>
-      <StyledBtn>Btn</StyledBtn>
-    </div>
-  );
+  const condition = 0;
+  if (condition === true) {
+    return <div>true or 0</div>;
+  } else {
+    return <div>false but 0</div>
+  }
+
 };
 
 export default Test;
