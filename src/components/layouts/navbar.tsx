@@ -1,4 +1,5 @@
 import * as React from "react";
+import Link from 'next/link';
 import { styled } from "@mui/material/styles";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
@@ -18,14 +19,14 @@ const StyledTab = styled(Tab)({
 
 // data
 const data = [
-  { value: "#", label: "ホーム" },
-  { value: "#", label: "新着情報" },
-  { value: "#", label: "桜貝アクセサリー" },
-  { value: "#", label: "ピアス*イアリング" },
-  { value: "#", label: "ネックレス" },
-  { value: "#", label: "ヘアアクセサリー" },
-  { value: "#", label: "雑貨" },
-  { value: "#", label: "お問い合わせ" },
+  { value: "/", label: "ホーム" },
+  { value: "/info", label: "新着情報" },
+  { value: "/accessory", label: "桜貝アクセサリー" },
+  { value: "earring", label: "ピアス*イアリング" },
+  { value: "neckless", label: "ネックレス" },
+  { value: "hair_accessory", label: "ヘアアクセサリー" },
+  { value: "other", label: "雑貨" },
+  { value: "contact", label: "お問い合わせ" },
 ];
 
 const Navbar = () => {
@@ -43,7 +44,14 @@ const Navbar = () => {
           onChange={handleChange}
           centered
         >
-          {data.map((item, i) => <StyledTab value={item.value} label={item.label} key={i} />)}
+          {data.map((item, i) => {
+            return (
+              <Link href={item.value}>
+                <StyledTab value={item.value} label={item.label} key={i} />
+              </Link>
+            )
+          }
+          )}
         </StyledTabs>
 
       </Box>
