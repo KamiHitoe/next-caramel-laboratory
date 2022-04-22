@@ -1,13 +1,17 @@
-import Navbar from "./navbar";
-import Top from "./top";
-import Footer from "./footer";
+import Navbar from "./Navbar";
+import Top from "./Top";
+import Footer from "./Footer";
 
 export default function Layout({ children }) {
   return (
     <div>
       <Navbar />
       <Top />
-      <main>{children}</main>
+      
+      <main>
+        {children}
+      </main>
+      
       <Footer />
     </div>
   );
