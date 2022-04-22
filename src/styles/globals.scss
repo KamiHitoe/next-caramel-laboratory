@@ -5,6 +5,9 @@ $gray: #9e9e9e;
 $warning: #f44336;
 
 // custom
+main {
+  margin: 2rem 2rem;
+}
 .title {
   color: $amber;
 }
@@ -14,6 +17,9 @@ $warning: #f44336;
 }
 .warning {
   color: $warning;
+}
+.align-left {
+  text-align: left;
 }
 
 // default
