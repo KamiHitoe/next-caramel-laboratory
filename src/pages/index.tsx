@@ -12,7 +12,6 @@ const StyledBoxText = styled("p")({
 const Home: NextPage = () => {
   return (
     <div>
-      <h1>Welcome to Caramel Laboratory!</h1>
       <Grid container spacing={2} alignItems="center">
         <Grid item md={6}>
           <h2 className="subtitle">ネックレス</h2>

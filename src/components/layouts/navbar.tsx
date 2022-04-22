@@ -46,8 +46,8 @@ const Navbar = () => {
         >
           {data.map((item, i) => {
             return (
-              <Link href={item.value}>
-                <StyledTab value={item.value} label={item.label} key={i} />
+              <Link href={item.value} key={i}>
+                <StyledTab value={item.value} label={item.label} />
               </Link>
             )
           }
