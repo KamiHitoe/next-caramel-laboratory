@@ -32,47 +32,39 @@ const Form = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Grid
-        container
-        alignItems="center"
-        justify="center"
-        direction="column"
-      >
-        <Grid item>
-          <TextField
-            id="name"
-            name="name"
-            label="お名前"
-            type="text"
-            value={formValues.name}
-            onChange={handleInputChange}
-          />
-        </Grid>
-        <Grid item>
-          <TextField
-            id="mail"
-            name="mail"
-            label="メールアドレス"
-            type="text"
-            value={formValues.mail}
-            onChange={handleInputChange}
-          />
-        </Grid>
-        <Grid item>
-          <FormControl fullWidth sx={{ m: 1 }}>
-            <InputLabel htmlFor="outlined-adornment-amount">お問い合わせ内容</InputLabel>
-            <OutlinedInput
-              id="message"
-              value={formValues.message}
-              onChange={handleInputChange}
-              label="お問い合わせ内容"
-            />
-          </FormControl>
-        </Grid>
+      <FormControl fullWidth sx={{ m: "0.5rem" }}>
+        <InputLabel htmlFor="outlined-adornment-amount">お名前</InputLabel>
+        <OutlinedInput
+          id="name"
+          name="name"
+          value={formValues.name}
+          onChange={handleInputChange}
+        />
+      </FormControl>
+      <FormControl fullWidth sx={{ m: "0.5rem" }}>
+        <InputLabel htmlFor="outlined-adornment-amount">メールアドレス</InputLabel>
+        <OutlinedInput
+          id="mail"
+          name="mail"
+          value={formValues.mail}
+          onChange={handleInputChange}
+        />
+      </FormControl>
+      <FormControl fullWidth sx={{ m: "0.5rem" }}>
+        <InputLabel htmlFor="outlined-adornment-amount">お問い合わせ内容</InputLabel>
+        <OutlinedInput
+          id="message"
+          name="message"
+          value={formValues.message}
+          onChange={handleInputChange}
+        />
+      </FormControl>
 
-        <br />
-        <Button type="submit">show result</Button>
-      </Grid>
+      <br />
+      <Button type="submit">show result</Button>
+      <p>name: {formValues.name}</p>
+      <p>mail: {formValues.mail}</p>
+      <p>message: {formValues.message}</p>
     </form>
   );
 };
