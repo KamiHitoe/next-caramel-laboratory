@@ -24,5 +24,3 @@ install libraries below.
 - MUI の CSS property 変更 => styled component が使えた
 
 ## Reference
-
-fail to set JEST
