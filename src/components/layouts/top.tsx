@@ -1,17 +1,21 @@
 import Image from "next/image";
+import { styled } from "@mui/material/styles";
+
+const StyledDiv = styled("div")({
+  padding: "2rem 0",
+  backgroundColor: "#fff",
+});
 
 const Top = () => {
   return (
-    <div>
-      <h1 className="title">きゃらめるラボラトリー</h1>
+    <StyledDiv>
       <Image 
-        src="/images/caramel_top.jpg"
+        src="/images/kotsubu_factory.png"
         alt="caramel_top"
-        width="500"
-        height="375"
+        width="800"
+        height="600"
       />
-
-    </div>
+    </StyledDiv>
   );
 };
 

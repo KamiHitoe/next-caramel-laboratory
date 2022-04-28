@@ -3,6 +3,10 @@ import Cart from "../items/Cart";
 import { styled } from "@mui/material/styles";
 import { amber } from "@mui/material/colors";
 
+const StyledDiv = styled("div")({
+  backgroundColor: "#fff",
+});
+
 const StyledSpan = styled("span")({
   "&:hover": {
     color: amber[500],
@@ -11,17 +15,17 @@ const StyledSpan = styled("span")({
 
 const Login = () => {
   return (
-    <div>
+    <StyledDiv>
       <Box sx={{
         display: "flex",
         justifyContent: "flex-end",
       }}>
-        <h4><StyledSpan>Sign in</StyledSpan> | <StyledSpan>Sign out</StyledSpan> | </h4>
+        <h4 className="text-gray"><StyledSpan>Sign in</StyledSpan> | <StyledSpan>Sign out</StyledSpan> | </h4>
         <Box sx={{ alignSelf: "center" }}>
           <Cart />
         </Box>
       </Box>
-    </div>
+    </StyledDiv>
   );
 };
 
