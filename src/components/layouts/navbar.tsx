@@ -4,16 +4,18 @@ import { styled } from "@mui/material/styles";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
-import { amber, pink } from "@mui/material/colors";
+import { amber, lightBlue } from "@mui/material/colors";
 
 // styles
 const StyledTabs = styled(Tabs)({ backgroundColor: amber[100], });
 const StyledTab = styled(Tab)({
-  color: amber[800],
+  color: amber[900],
+  fontSize: 14,
+  fontWeight: "bold",
   "&:hover": {
-    color: pink[500],
-    backgroundColor: pink[50],
-    borderBottom: "2px solid pink",
+    color: lightBlue[500],
+    backgroundColor: lightBlue[100],
+    borderBottom: "2px solid lightBlue",
   }
 });
 

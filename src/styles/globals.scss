@@ -1,16 +1,30 @@
+// color
 $amber: #ffc107;
 $amber-light: #ffecb3;
 $light-blue: #03a9f4;
 $gray: #9e9e9e;
 $warning: #f44336;
 
+// font-size
+/**
+text: 16px
+privacy: 12px
+title: 32px
+subtitle: 24px
+**/
+.text {
+  font-size: 16px;
+}
+
 // custom
 main {
   margin: 2rem 2rem;
 }
+// h1
 .title {
   color: $amber;
 }
+// h2
 .subtitle {
   color: $light-blue;
   border-bottom: 1px solid $light-blue;

@@ -7,8 +7,8 @@ const Top = () => {
       <Image 
         src="/images/caramel_top.jpg"
         alt="caramel_top"
-        width="700"
-        height="500"
+        width="500"
+        height="375"
       />
 
     </div>
