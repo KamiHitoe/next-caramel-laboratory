@@ -7,15 +7,15 @@ import Box from "@mui/material/Box";
 import { amber, lightBlue } from "@mui/material/colors";
 
 // styles
-const StyledTabs = styled(Tabs)({ backgroundColor: amber[100], });
+const StyledTabs = styled(Tabs)({ backgroundColor: "#fff", });
 const StyledTab = styled(Tab)({
-  color: amber[900],
+  color: "#000",
   fontSize: 14,
   fontWeight: "bold",
   "&:hover": {
-    color: lightBlue[500],
-    backgroundColor: lightBlue[100],
-    borderBottom: "2px solid lightBlue",
+    color: amber[800],
+    backgroundColor: amber[100],
+    borderBottom: "2px solid orange",
   }
 });
 
