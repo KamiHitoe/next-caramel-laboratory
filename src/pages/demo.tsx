@@ -1,39 +1,31 @@
-import { useState } from 'react';
+import { useState, useEffect } from "react";
+import { app } from "../plugins/firebase";
+import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 
-interface AppProps {
-  id: number,
-  name: string,
-}
+const Demo = () => {
+  const [items, setItems] = useState([]);
 
-const Child = (props: AppProps) => {
+  const db = getFirestore(app);
+  const getItems = async (db) => {
+    const itemsCol = collection(db, 'items');
+    const itemSnapshot = await getDocs(itemsCol);
+    const items = itemSnapshot.docs.map(doc => doc.data());
+    setItems(items);
+  }
+
+  useEffect(() => {
+    getItems(db);
+  })
+
+  const list = [1,2,3]
+
   return (
     <div>
-      <p>id is {props.id}</p>
-      <p>name is {props.name}</p>
+      <h1>Demo</h1>
+      {items.map(item => <p>{item.itemName}</p>)}
+      {list.map(item => <p>{item}</p>)}
     </div>
   )
 };
 
-const Test = () => {
-  return (
-    <div>
-      <Child id={1} name='miyuki' />
-    </div>
-  )
-};
-
-const TestState = () => {
-  const [cnt, setCnt] = useState<number>(0);
-  const incr = () => setCnt(cnt + 1);
-
-  return (
-    <div>
-      <button onClick={incr}>incr</button>
-      <p>{cnt}</p>
-    </div>
-  )
-};
-
-export default Test;
-
-
+export default Demo;
