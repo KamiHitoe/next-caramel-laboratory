@@ -12,7 +12,7 @@ const StyledText = styled("p")({
 const ItemCard = (props) => {
   if (props.side === "left") {
     return (
-      <StyledCard variant="elevated">
+      <StyledCard variant="elevation">
         <Grid container>
           <Grid item md={6}>
             <CardMedia
@@ -35,7 +35,7 @@ const ItemCard = (props) => {
   // props.side === "right"
   } else {
     return (
-      <StyledCard variant="elevated">
+      <StyledCard variant="elevation">
         <Grid container>
           <Grid item md={6}>
             <CardContent>
