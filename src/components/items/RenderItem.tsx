@@ -1,39 +1,39 @@
 import { useState, useEffect } from "react";
-import { app } from "../plugins/firebase";
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+import { app } from "@/plugins/firebase";
+import { getFirestore, collection, query, where, getDocs } from 'firebase/firestore/lite';
 import Grid from "@mui/material/Grid";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
-import { Item } from "../types/Type";
-import { StyledCard } from "../styles/component";
-import { StyledButton } from "../styles/component";
+import { Item } from "@/types/Type";
+import { StyledCard } from "@/styles/component";
+import { StyledButton } from "@/styles/component";
 
-const Demo = () => {
+const RenderItem = (props) => {
   const [items, setItems] = useState([]);
 
   const db = getFirestore(app);
-  const getItems = async (db) => {
+  const q = query(collection(db, "items"), where("genre", "==", props.genre));
+  const getItems = async (q) => {
     // get collection
-    const itemsCol = collection(db, 'items');
+    // const itemsCol = collection(db, 'items');
     // get docs
-    const itemSnapshot = await getDocs(itemsCol);
-    // get items and create earring list
-    let earrings: Item[] = [];
-    itemSnapshot.docs.map(doc => {
-      if (doc.data().genre === 'other') {
-        earrings.push(doc.data());
-      }
+    const itemQuerySnapshot = await getDocs(q);
+    // get docs.data() => items[]
+    const items: Item[] = [];
+    itemQuerySnapshot.forEach(doc => {
+      items.push(doc.data());
     });
-    setItems(earrings);
-  }
+    setItems(items);
+    // return items;
+  };
 
   useEffect(() => {
-    getItems(db);
-  })
+    getItems(q);
+  }, []); // no dependency
 
   return (
     <div>
-      <h1>Demo</h1>
+      {/* custom description about page */}
 
       <Grid container>
         {items.map(item => {
@@ -65,4 +65,4 @@ const Demo = () => {
   )
 };
 
-export default Demo;
+export default RenderItem;

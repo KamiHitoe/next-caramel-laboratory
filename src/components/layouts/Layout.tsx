@@ -1,7 +1,7 @@
 import Navbar from "./Navbar";
 import Top from "./Top";
 import Footer from "./Footer";
-import Login from "../users/Login";
+import Login from "@/components/users/Login";
 
 export default function Layout({ children }) {
   return (

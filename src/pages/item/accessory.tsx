@@ -1,13 +1,13 @@
 import Grid from "@mui/material/Grid";
-import MappedItem from "../components/items/MappedItem";
+import MappedItem from "@/components/items/MappedItem";
 
-const Neckless = () => {
+const Accessory = () => {
   return (
     <div>
-      <h1 className="subtitle">ネックレス</h1>
+      <h1 className="subtitle">桜貝アクセサリー</h1>
       <p className="align-left">
-      コーディネートの一部として、首元に可愛らしさをプラスしてみませんか？
-お友達へのプレゼントにも最適です！
+        "幸せを呼ぶ貝"と言われる桜貝を用いたネックレスです。あなたのもとにも幸せが訪れるようにいかかですか★
+お友達や恋人へのプレゼントにもピッタリです！
       </p>
       <p className="warning align-left">
         ※写真と実物と色味が異なる場合がございますので、予めご了承ください
@@ -23,6 +23,6 @@ const Neckless = () => {
   )
 };
 
-export default Neckless;
+export default Accessory;
 
 

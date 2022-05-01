@@ -1,5 +1,5 @@
 import Grid from "@mui/material/Grid";
-import MappedItem from "../components/items/MappedItem";
+import MappedItem from "@/components/items/MappedItem";
 
 const Earring = () => {
   return (
