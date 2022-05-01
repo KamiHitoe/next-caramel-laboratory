@@ -1,5 +1,5 @@
 import Grid from "@mui/material/Grid";
-import { StyledCard } from "../../styles/component";
+import { StyledCard } from "@/styles/component";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import { styled } from "@mui/material/styles";
