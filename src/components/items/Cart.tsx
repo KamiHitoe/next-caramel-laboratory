@@ -1,9 +1,12 @@
+import Link from "next/Link";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 const Cart = () => {
   return (
     <div>
-      <ShoppingCartIcon />
+      <Link href="/cart/item">
+        <a><ShoppingCartIcon /></a>
+      </Link>
     </div>
   );
 };

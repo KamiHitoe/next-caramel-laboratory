@@ -1,5 +1,4 @@
-import Grid from "@mui/material/Grid";
-import MappedItem from "@/components/items/MappedItem";
+import RenderItem from "@/components/items/RenderItem";
 
 const HairAccessory = () => {
   return (
@@ -13,11 +12,7 @@ const HairAccessory = () => {
       </p>
       <hr />
 
-      <Grid container spacing={2} alignItems="center">
-        {[...Array(10)].map((e, i) => 
-          <MappedItem key={i} bgColor="pink" />
-        )}
-      </Grid>
+      <RenderItem genre="hair_accessory" />
     </div>
   )
 };

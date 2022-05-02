@@ -7,7 +7,9 @@ import Box from "@mui/material/Box";
 import { amber, lightBlue } from "@mui/material/colors";
 
 // styles
-const StyledTabs = styled(Tabs)({ backgroundColor: "#fff", });
+const StyledTabs = styled(Tabs)({ 
+  backgroundColor: "#fff",
+});
 const StyledTab = styled(Tab)({
   color: "#000",
   fontSize: 14,
@@ -23,11 +25,11 @@ const StyledTab = styled(Tab)({
 const data = [
   { value: "/", label: "ホーム" },
   { value: "/info", label: "新着情報" },
-  { value: "/accessory", label: "桜貝アクセサリー" },
-  { value: "earring", label: "ピアス*イアリング" },
-  { value: "neckless", label: "ネックレス" },
-  { value: "hair_accessory", label: "ヘアアクセサリー" },
-  { value: "other", label: "雑貨" },
+  { value: "/item/accessory", label: "桜貝アクセサリー" },
+  { value: "/item/earring", label: "ピアス*イアリング" },
+  { value: "/item/neckless", label: "ネックレス" },
+  { value: "/item/hair_accessory", label: "ヘアアクセサリー" },
+  { value: "/item/other", label: "雑貨" },
   { value: "contact", label: "お問い合わせ" },
 ];
 
@@ -42,9 +44,10 @@ const Navbar = () => {
     <div>
       <Box sx={{ width: "100%" }}>
         <StyledTabs
-          value={value}
-          onChange={handleChange}
+          value={0}
+          // onChange={handleChange}
           centered
+          indicatorColor={""}
         >
           {data.map((item, i) => {
             return (

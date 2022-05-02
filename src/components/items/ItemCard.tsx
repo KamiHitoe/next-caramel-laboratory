@@ -19,7 +19,7 @@ const ItemCard = (props) => {
               component="img"
               height="300"
               image={props.imageSrc}
-              alt="sea_glass_bl"
+              alt={props.subtitle}
             />
           </Grid>
           <Grid item md={6}>
@@ -40,7 +40,7 @@ const ItemCard = (props) => {
           <Grid item md={6}>
             <CardContent>
               <h2 className="subtitle">{props.subtitle}</h2>
-              <p>{props.text}</p>
+              <StyledText>{props.text}</StyledText>
             </CardContent>
           </Grid>
           <Grid item md={6}>
@@ -48,7 +48,7 @@ const ItemCard = (props) => {
               component="img"
               height="300"
               image={props.imageSrc}
-              alt="sea_glass_bl"
+              alt={props.subtitle}
             />
           </Grid>
   

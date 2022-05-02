@@ -1,9 +1,5 @@
 import type { NextPage } from "next";
-import Image from "next/image";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
 import ItemCard from "@/components/items/ItemCard";
-// import { styled } from "@mui/material/styles";
 
 const contents = [
   {
