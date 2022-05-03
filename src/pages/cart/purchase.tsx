@@ -8,6 +8,7 @@ import TableCell from "@mui/material/TableCell"
 import Paper from "@mui/material/Paper";
 import { styled } from "@mui/material/styles";
 import Image from "next/Image";
+import Link from "next/Link";
 
 const StyledTableCell = styled(TableCell)({
   fontWeight: "bold",
@@ -35,13 +36,13 @@ const createRow = (
 };
 
 const data = [
-  createRow('url', 'itemName', 1000, 1),
-  createRow('url', 'itemName', 1000, 2),
-  createRow('url', 'itemName', 1000, 3),
-  createRow('url', 'itemName', 1000, 4),
+  createRow("/images/sea_glass_bl.jpg", 'itemName', 1000, 1),
+  createRow("/images/sea_glass_bl.jpg", 'itemName', 1000, 2),
+  createRow("/images/sea_glass_bl.jpg", 'itemName', 1000, 3),
+  createRow("/images/sea_glass_bl.jpg", 'itemName', 1000, 4),
 ]
 
-const CartItem = () => {
+const Purchase = () => {
   return (
     <div>
       <h1 className="subtitle">商品購入ページ</h1>
@@ -50,10 +51,11 @@ const CartItem = () => {
         <Table aria-label="simple table">
           <TableHead>
             <TableRow>
-              <StyledTableCell>商品画像</StyledTableCell>
-              <StyledTableCell>商品名</StyledTableCell>
-              <StyledTableCell>単価</StyledTableCell>
-              <StyledTableCell>数量</StyledTableCell>
+              <StyledTableCell align="center">商品画像</StyledTableCell>
+              <StyledTableCell align="center">商品名</StyledTableCell>
+              <StyledTableCell align="center">単価</StyledTableCell>
+              <StyledTableCell align="center">数量</StyledTableCell>
+              <StyledTableCell align="center">btn</StyledTableCell>
             </TableRow>
           </TableHead>
 
@@ -63,16 +65,20 @@ const CartItem = () => {
                 <TableRow>
                   <TableCell>
                     <Image 
-                      src="/images/kotsubu_factory.png"
-                      alt="caramel_top"
-                      width="800"
-                      height="600"
+                      src={row.imgPath}
+                      alt={row.itemName}
+                      width="300"
+                      height="300"
                     />
-                    {row.imgPath}
                   </TableCell>
                   <TableCell>{row.itemName}</TableCell>
                   <TableCell>{row.price}</TableCell>
                   <TableCell>{row.cartCounts}</TableCell>
+                  <TableCell>
+                    <StyledButton variant="contained">+</StyledButton>
+                    <StyledButton variant="contained">-</StyledButton>
+                    <StyledButton variant="contained">x</StyledButton>
+                  </TableCell>
                 </TableRow>
               )
             })}
@@ -80,9 +86,11 @@ const CartItem = () => {
         </Table>
       </TableContainer>
 
-      <StyledButton variant="contained">購入する</StyledButton>
+      <Link href="/cart/userform">
+        <StyledButton variant="contained">購入する</StyledButton>
+      </Link>
     </div>
   )
 };
 
-export default CartItem;
+export default Purchase;
