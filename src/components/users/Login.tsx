@@ -23,7 +23,7 @@ const Login = () => {
         justifyContent: "flex-end",
       }}>
         <h4 className="text-gray">
-          <Link href="/login">
+          <Link href="/user/login">
             <StyledAnchor>Sign in </StyledAnchor>
           </Link>
           |
