@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { app } from "@/plugins/firebase";
+import { firebase } from "@/plugins/firebase";
 import { getFirestore, collection, query, where, getDocs } from 'firebase/firestore/lite';
 import Grid from "@mui/material/Grid";
 import CardMedia from "@mui/material/CardMedia";
@@ -11,7 +11,7 @@ import { StyledButton } from "@/styles/component";
 const RenderItem = (props) => {
   const [items, setItems] = useState([]);
 
-  const db = getFirestore(app);
+  const db = getFirestore(firebase);
   const q = query(collection(db, "items"), where("genre", "==", props.genre));
   const getItems = async (q) => {
     // get collection
