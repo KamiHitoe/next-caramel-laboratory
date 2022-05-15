@@ -1,4 +1,4 @@
-import { StyledButton } from "@/styles/component";
+import { StyledAmberButton } from "@/styles/component";
 import TableContainer from "@mui/material/TableContainer";
 import Table from "@mui/material/Table";
 import TableHead from "@mui/material/TableHead";
@@ -75,9 +75,9 @@ const Purchase = () => {
                   <TableCell>{row.price}</TableCell>
                   <TableCell>{row.cartCounts}</TableCell>
                   <TableCell>
-                    <StyledButton variant="contained">+</StyledButton>
-                    <StyledButton variant="contained">-</StyledButton>
-                    <StyledButton variant="contained">x</StyledButton>
+                    <StyledAmberButton variant="contained">+</StyledAmberButton>
+                    <StyledAmberButton variant="contained">-</StyledAmberButton>
+                    <StyledAmberButton variant="contained">x</StyledAmberButton>
                   </TableCell>
                 </TableRow>
               )
@@ -87,7 +87,7 @@ const Purchase = () => {
       </TableContainer>
 
       <Link href="/cart/userform">
-        <StyledButton variant="contained">購入する</StyledButton>
+        <StyledAmberButton variant="contained">購入する</StyledAmberButton>
       </Link>
     </div>
   )

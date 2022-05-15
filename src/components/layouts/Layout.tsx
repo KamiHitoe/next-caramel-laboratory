@@ -1,13 +1,13 @@
-import Navbar from "./Navbar";
+// import Navbar from "./Navbar";
 import Top from "./Top";
 import Footer from "./Footer";
-import Login from "@/components/users/Login";
+// import Login from "@/components/users/Login";
+import Appbar from "./Appbar";
 
 export default function Layout({ children }) {
   return (
     <div>
-      <Navbar />
-      <Login />
+      <Appbar />
       <Top />
       
       <main>

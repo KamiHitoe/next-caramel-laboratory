@@ -1,5 +1,5 @@
 import * as React from "react";
-import Link from 'next/link';
+import Link from 'next/Link';
 import { styled } from "@mui/material/styles";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";

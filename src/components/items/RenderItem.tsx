@@ -6,7 +6,7 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import { Item } from "@/types/Type";
 import { StyledCard } from "@/styles/component";
-import { StyledButton } from "@/styles/component";
+import { StyledAmberButton } from "@/styles/component";
 
 const RenderItem = (props) => {
   const [items, setItems] = useState([]);
@@ -36,9 +36,9 @@ const RenderItem = (props) => {
       {/* custom description about page */}
 
       <Grid container>
-        {items.map(item => {
+        {items.map((item, i) => {
           return (
-            <Grid item md={6}>
+            <Grid item md={6} key={i}>
               <StyledCard variant="elevation">
                 <CardMedia
                   component="img"
@@ -47,14 +47,14 @@ const RenderItem = (props) => {
                   alt={item.itemName}
                 />
                 <CardContent>
-                  <h2>{item.itemName}</h2>
+                  <h2 className="text-left">{item.itemName}</h2>
                   <div className="text-left">
                     <p>価格: ￥{item.price}</p>
                     <p>在庫数: {item.counts}</p>
                     <p>お届け日数: 5 - 8日</p>
                     <p>※日本国内送料無料</p>
                   </div>
-                  <StyledButton variant="contained">カートに追加</StyledButton>
+                  <StyledAmberButton variant="contained">カートに追加</StyledAmberButton>
                 </CardContent>
               </StyledCard>
             </Grid>
